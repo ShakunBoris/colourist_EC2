@@ -1,0 +1,134 @@
+{% extends 'front/layout.html' %} {% load static %} 
+{% block title %} Gallery {% endblock %} {% block head %} {% endblock %} {% block style %}
+<link
+  href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+{% endblock%} {% block body %}
+<body>
+  <div class="empty-step">
+  <div id="nanogallery2">
+    {% for x in imgs %}
+      <a href="{{ x.photo.url }}" data-ngthumb="{{ x.photo.url }}"> {{x.title}} </a>
+    {% endfor %}
+    
+  </div>
+  <script>
+    {% comment %} data-imgs="{{ imgs }}" {% endcomment %}
+    {% comment %} const data = document.currentScript.dataset;
+    const imgs = data.imgs;
+    console.log(imgs.photo['url']); {% endcomment %}
+    jQuery(document).ready(function () {
+      jQuery("#nanogallery2").nanogallery2({
+        thumbnailHeight: 150,
+        thumbnailWidth: 150,
+        {% comment %} itemsBaseURL: "http://nanogallery2.nanostudio.org/samples/", {% endcomment %}
+        {% comment %} items: [ {% endcomment %}
+          {% comment %} { src: "berlin1.jpg", srct: "berlin1_t.jpg", title: "Berlin 1" },
+          { src: "berlin2.jpg", srct: "berlin2_t.jpg", title: "Berlin 2" },
+          { src: "berlin3.jpg", srct: "berlin3_t.jpg", title: "Berlin 3" },
+          {% for x in imgs %}
+          { src: "{{x.photo.url}}", srct: "{{x.photo.url}}", title:"{{x.title}}"},
+          {% endfor %} {% endcomment %}
+        {% comment %} ], {% endcomment %}
+
+        // TRY HERE////////////////////////////
+        {% comment %} kind: 'nano_photos_provider2',
+        dataProvider: 'https://nano.gallery/ngy2/demo1/nano_photos_provider2/nano_photos_provider2.php',
+        album: 'people', {% endcomment %}
+          // GALLERY AND THUMBNAIL LAYOUT
+          galleryMosaic : [                       // default layout
+            { w: 2, h: 2, c: 1, r: 1 },
+            { w: 1, h: 1, c: 3, r: 1 },
+            { w: 1, h: 1, c: 3, r: 2 },
+            { w: 1, h: 2, c: 4, r: 1 },
+            { w: 2, h: 1, c: 5, r: 1 },
+            { w: 2, h: 2, c: 5, r: 2 },
+            { w: 1, h: 1, c: 4, r: 3 },
+            { w: 2, h: 1, c: 2, r: 3 },
+            { w: 1, h: 2, c: 1, r: 3 },
+            { w: 1, h: 1, c: 2, r: 4 },
+            { w: 2, h: 1, c: 3, r: 4 },
+            { w: 1, h: 1, c: 5, r: 4 },
+            { w: 1, h: 1, c: 6, r: 4 }
+          ],
+          galleryMosaicXS : [                     // layout for XS width
+            { w: 2, h: 2, c: 1, r: 1 },
+            { w: 1, h: 1, c: 3, r: 1 },
+            { w: 1, h: 1, c: 3, r: 2 },
+            { w: 1, h: 2, c: 1, r: 3 },
+            { w: 2, h: 1, c: 2, r: 3 },
+            { w: 1, h: 1, c: 2, r: 4 },
+            { w: 1, h: 1, c: 3, r: 4 }
+          ],
+          galleryMosaicSM : [                     // layout for SM width
+            { w: 2, h: 2, c: 1, r: 1 },
+            { w: 1, h: 1, c: 3, r: 1 },
+            { w: 1, h: 1, c: 3, r: 2 },
+            { w: 1, h: 2, c: 1, r: 3 },
+            { w: 2, h: 1, c: 2, r: 3 },
+            { w: 1, h: 1, c: 2, r: 4 },
+            { w: 1, h: 1, c: 3, r: 4 }
+          ],
+        galleryMaxRows: 1,
+        galleryDisplayMode: "rows",
+        gallerySorting: "random",
+        thumbnailDisplayOrder: "random",
+
+        thumbnailHeight: "180",
+        thumbnailWidth: "220",
+        thumbnailAlignment: "scaled",
+        thumbnailGutterWidth: 0,
+        thumbnailGutterHeight: 0,
+        thumbnailBorderHorizontal: 0,
+        thumbnailBorderVertical: 0,
+
+        thumbnailToolbarImage: null,
+        thumbnailToolbarAlbum: null,
+        thumbnailLabel: { display: false },
+        // DISPLAY ANIMATION
+        // for gallery
+        galleryDisplayTransitionDuration: 1500,
+
+        // for thumbnails
+        thumbnailDisplayTransition: "imageSlideUp",
+        thumbnailDisplayTransitionDuration: 1200,
+        thumbnailDisplayTransitionEasing: "easeInOutQuint",
+        thumbnailDisplayInterval: 60,
+
+        // THUMBNAIL HOVER ANIMATION
+        thumbnailBuildInit2: "image_scale_1.15",
+        thumbnailHoverEffect2:
+          "thumbnail_scale_1.00_1.05_300|image_scale_1.15_1.00",
+        touchAnimation: true,
+        touchAutoOpenDelay: 500,
+
+        // LIGHTBOX
+        viewerToolbar: { display: false },
+        viewerTools: {
+          topLeft: "label",
+          topRight:
+            "shareButton, rotateLeft, rotateRight, fullscreenButton, closeButton",
+        },
+
+        // GALLERY THEME
+        galleryTheme: {
+          thumbnail: { background: "#111" },
+        },
+
+        // DEEP LINKING
+        locationHash: true,
+        //////////////////////////////////////
+      });
+    });
+  </script>
+</div>  
+</body>
+{%endblock%} {% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://unpkg.com/nanogallery2/dist/jquery.nanogallery2.min.js"
+></script>
+{% endblock %}

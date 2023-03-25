@@ -1,0 +1,28 @@
+.contact-form-div {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgb(255, 255, 255); */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+
+.contact-form table{
+    border-radius: 10px 10px;
+}
+.contact-form *{
+    margin: 1px;
+    padding: 1px;
+    border-radius: 10px 10px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-form-div div input {
+    color:black;
+    width:100%;
+}

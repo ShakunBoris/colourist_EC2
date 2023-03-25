@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Colorizer {% endblock %}</title>
+    <link href="{% static 'front/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'front/before-after.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'front/favicon.ico' %}">
+    <link
+    rel="stylesheet"
+    href="{%static 'front/animate.css'%}">
+    {% comment %} HEADER {% endcomment %}
+    <link rel='stylesheet' href="{% static 'front/bootstrap.min.css' %}">
+    <script src="{% static 'front/bootstrap.bundle.min.js' %}"></script>
+    {% block head%}
+    {% endblock %}
+    {% block style %}
+    {% endblock %}
+    {% block script %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+        <div class="container">
+          <a class="navbar-brand" href="/"> Colourist </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mx-auto"></div>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'front:gallery' %}">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Director</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'front:contact' %}"> Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

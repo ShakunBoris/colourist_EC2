@@ -1,0 +1,85 @@
+{% extends 'front/layout.html' %} {% load static %} 
+{% block title %} 
+Alex Vikulov: Colourist 
+{% endblock %} 
+{% block style %} 
+<link rel='stylesheet' type="text/css" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+
+{% endblock%} 
+{% block body %} 
+{% comment %} <img src={%static 'front/img/arab.jpg'%} alt="asd"> {% endcomment %}
+{% comment %} <div class="nav-bar">
+  logo
+  <ul>
+    <li><a href="{% url 'front:contact' %}"> Contact </a></li>
+    <li><a href="#"> Gallery </a></li>
+  </ul>
+</div> {% endcomment %}
+<!-- Navbar  -->
+<div class="sect1 sect wow bounceInDown">
+  <h1 id="h1">Alex Vikulov</h1>
+</div>
+<div class="sect2">
+  <h2>Welcome!</h2>
+  <p>
+    Hello and welcome to my portfolio page. <br/>
+    In the <a href="{% url 'front:gallery' %}">Gallery</a> you can find examples of my work as a colorist. <br/>
+    In the <a href="#">Director</a>'s section, you can find examples of my directorial work. <br/>
+  </p>
+</div>
+<div class="sectvideo wow bounceInRight">
+  <h1 class="video-text">Colorizing example</h1>
+  <div class="video-container">
+    <video
+      id="background-video"
+      autoplay
+      loop
+      muted
+      poster="{% static 'front/img/negra.jpg' %}"
+    >
+      <source src="{% static 'front/img/negra_video.mp4' %}" type="video/mp4" />
+    </video>
+  </div>
+</div>
+<div class="sect2">
+  <h2> My tech stack: </h2>
+  <h2> Adobe | DaVinci | Unity </h2>
+</div>
+<div class="sect3 sect " > Full Production Cycle</div> 
+{% comment %} wow bounceInRight {% endcomment %}
+<div class="sect2">
+  <h2> Reach me as you like:</h2>
+  <p>
+    See the <a href="#">Contact</a> page to leave your contact details. <br/>
+    ...or click on hidden text below to get my direct number...
+  </p>
+</div>
+<div class="sect4 sect"> (+7)(xxx)(xxx-xx-xx)</div>
+{% comment %} wow bounceInRight {% endcomment %}
+<div class="sect2">
+  <h2>Feel the difference</h2>
+  <p> Drag and drop the slider below</p>
+</div>
+{% comment %} NOT RESPONSIVE {% endcomment %}
+{% comment %} <div class="sect-before-after overflow-hidden">
+  <div class="image before"></div>
+  <div class="image after wow bounceInRight"></div>
+
+  <input type="range" class="slider" min="1" max="100" value="50" />
+  <div class="slider-button"></div>
+</div> {% endcomment %}
+<div class="img-compare">
+  <div id="image-compare">
+    <img src="{% static 'front\img\fc_edward_sleepy.webp'%}" alt="before" />
+    <img src="{% static 'front\img\fc_edward_suicide.webp'%}" alt="after" />
+  </div>
+</div>
+{%endblock%} {% block script %}
+<script src="{% static 'front/before-after.js' %}"></script>
+<script src="{% static 'front/wow.min.js' %}"></script>
+<script>
+  new WOW().init();
+</script>
+<script src="{% static 'front/image-compare.js' %}"></script>
+<script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+{% endblock %}
