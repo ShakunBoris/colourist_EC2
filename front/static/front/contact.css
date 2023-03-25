@@ -16,7 +16,7 @@
     padding: 1px;
     border-radius: 10px 10px;
     display: flex;
-    background-color: rgb(133, 133, 133);
+    background-color: rgb(255, 255, 255);
     color: black;
     flex-direction: column;
     justify-content: center;
@@ -25,4 +25,12 @@
 .contact-form-div div input {
     color:black;
     width:100%;
+}
+
+.contact-form tbody {
+    background-color: rgb(171, 171, 171);
+}
+
+.contact-form tr {
+    background-color: rgb(171, 171, 171);
 }
