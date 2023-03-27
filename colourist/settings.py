@@ -12,8 +12,8 @@ print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG}{20*"-"}\n')
 if DEBUG == False:
     # print('ENVIRONMENT TEST ABC: ', os.environ.get('TEST'))
     # print('type: ', type(DEBUG), DEBUG, os.environ.get('ALLOWED_HOSTS'))
-    # ALLOWED_HOSTS = ['*']
-    ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
+    ALLOWED_HOSTS = ['*']
+    # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 else:
     ALLOWED_HOSTS = ['*']
 
