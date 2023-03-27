@@ -89,6 +89,7 @@ WSGI_APPLICATION = 'colourist.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 if DEBUG == False:
+    print('DEBUG IN DATABASE: ', DEBUG, 'PG')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -100,6 +101,7 @@ if DEBUG == False:
         }
     }
 elif DEBUG == True:
+    print('DEBUG IN DATABASE: ', DEBUG, 'SQLITE')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
