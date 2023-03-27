@@ -22,7 +22,7 @@ DEBUG = False if os.environ.get('DEBUG') == 'False' else True
 print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG}{20*"-"}\n')
 # print('environ', os.environ)
 if DEBUG == False:
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', ['*']).split()
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split()
 else:
     ALLOWED_HOSTS = ['*']
 
