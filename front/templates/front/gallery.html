@@ -10,7 +10,7 @@
   <div class="empty-step">
   <div id="nanogallery2">
     {% for x in imgs %}
-      <a href="{{ x.photo.url }}" data-ngthumb="{{ x.photo.url }}"> {{x.title}} </a>
+      <a href="{{ x.photo.url }}" data-ngthumb="{{ x.thumbnail.url }}"> {{x.title}} </a>
     {% endfor %}
     
   </div>
