@@ -23,6 +23,7 @@ print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG}{20*"-"}\n')
 # print('environ', os.environ)
 if DEBUG == False:
     print(DEBUG, os.environ.get('ALLOWED_HOSTS'))
+    print(SECRET_KEY)
     ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 else:
     ALLOWED_HOSTS = ['*']
