@@ -3907,7 +3907,7 @@ fieldset:disabled .btn {
   color: rgba(0, 0, 0, 0.9);
 }
 .navbar-dark .navbar-brand {
-  color: #fff;
+  /* color: #fff; */
 }
 .navbar-dark .navbar-brand:focus,
 .navbar-dark .navbar-brand:hover {
@@ -6603,7 +6603,7 @@ fieldset:disabled .btn {
   color: #212529 !important;
 }
 .text-white {
-  color: #fff !important;
+  /* color: #fff !important; */
 }
 .text-body {
   color: #212529 !important;
