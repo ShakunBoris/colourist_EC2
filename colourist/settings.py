@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'colourist.wsgi.application'
 #         }
 #     }
 # elif 
-    DEBUG == False:
+if DEBUG == False:    
     print('DEBUG IN DATABASE: ', DEBUG, 'SQLITE')
     DATABASES = {
         'default': {
