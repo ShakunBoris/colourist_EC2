@@ -88,19 +88,20 @@ WSGI_APPLICATION = 'colourist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-if DEBUG == False:
-    print('DEBUG IN DATABASE: ', DEBUG, 'PG')
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ.get('PGDATABASE'),
-            'USER': os.environ.get('PGUSER'),
-            'PASSWORD': os.environ.get('PGPASSWORD'),
-            'HOST': os.environ.get('PGHOST'),
-            'PORT': os.environ.get('PGPORT'),
-        }
-    }
-elif DEBUG == True:
+# if DEBUG == False:
+#     print('DEBUG IN DATABASE: ', DEBUG, 'PG')
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': os.environ.get('PGDATABASE'),
+#             'USER': os.environ.get('PGUSER'),
+#             'PASSWORD': os.environ.get('PGPASSWORD'),
+#             'HOST': os.environ.get('PGHOST'),
+#             'PORT': os.environ.get('PGPORT'),
+#         }
+#     }
+# elif 
+    DEBUG == False:
     print('DEBUG IN DATABASE: ', DEBUG, 'SQLITE')
     DATABASES = {
         'default': {
