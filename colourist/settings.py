@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-gii4k+gh&1u%qilw%#+udjw15p-mspdon$f@pw(@&_qyup89xg').strip("'")
 # DEBUG = False if os.environ.get('DEBUG') == 'False' else True
-print(str(os.getenv('DEBUG', 'True')).lower())
+print('---------------------', str(os.getenv('DEBUG', 'True')).lower())
 DEBUG = False if 'false' in str(os.getenv('DEBUG', 'True')).lower() else True
 # os.getenv("ENV_VAR", 'False').lower() in ('true', '1', 't')
 print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG}{20*"-"}\n')
