@@ -20,7 +20,7 @@ else:
     ALLOWED_HOSTS = ['*']
 
 try:
-    CSRF_TRUSTED_ORIGINS = [env('CSRF_TRUSTED_ORIGINS')]
+    CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS')
     print('CSRF_TRUSTED_ORIGINS:', CSRF_TRUSTED_ORIGINS)
 except AttributeError:
     print('No CSRF_TRUSTED_ORIGINS loaded')
