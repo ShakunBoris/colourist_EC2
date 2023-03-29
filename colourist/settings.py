@@ -4,11 +4,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-print(type(DEBUG))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-gii4k+gh&1u%qilw%#+udjw15p-mspdon$f@pw(@&_qyup89xg').strip("'")
 # DEBUG = False if os.environ.get('DEBUG') == 'False' else True
 print(str(os.getenv('DEBUG', 'True')).lower())
-DEBUG = False if str(os.getenv('DEBUG', 'True')).lower() == 'false' else True
+DEBUG = False if 'false' in str(os.getenv('DEBUG', 'True')).lower() else True
 # os.getenv("ENV_VAR", 'False').lower() in ('true', '1', 't')
 print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG}{20*"-"}\n')
 # print('environ', os.environ)
@@ -20,7 +19,6 @@ if DEBUG == False:
 else:
     ALLOWED_HOSTS = ['*']
 
-print(ALLOWED_HOSTS, type(DEBUG))
 try:
     CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS').split()
     print('CSRF_TRUSTED_ORIGINS:', CSRF_TRUSTED_ORIGINS)
