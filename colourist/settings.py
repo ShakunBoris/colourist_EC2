@@ -15,10 +15,10 @@ DEBUG = env('DEBUG') != 'False'
 print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG} type={type(DEBUG)}{20*"-"}\n')
 if DEBUG == False:
     ALLOWED_HOSTS = [
-        "localhost",
-        "0.0.0.0",
+        # "localhost",
+        # "0.0.0.0",
         "3.125.8.5",
-        "http://3.125.8.5/",
+        # "http://3.125.8.5/",
         ] # [env('ALLOWED_HOSTS')]
     print('<= realALLOWED_HOSTS //// OLD=>', env('ALLOWED_HOSTS'))
 else:
@@ -26,10 +26,11 @@ else:
 
 try:
     CSRF_TRUSTED_ORIGINS = [
-        "localhost",
-        "0.0.0.0",
+        # "localhost",
+        # "0.0.0.0",
         "3.125.8.5",
-        "http://3.125.8.5/",]
+        # "http://3.125.8.5/",
+        ]
     #['http://3.125.8.5/'] #env('CSRF_TRUSTED_ORIGINS')
     print('CSRF_TRUSTED_ORIGINS:', CSRF_TRUSTED_ORIGINS)
 except AttributeError:
