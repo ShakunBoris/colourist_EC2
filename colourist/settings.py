@@ -4,6 +4,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+print(type(DEBUG))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-gii4k+gh&1u%qilw%#+udjw15p-mspdon$f@pw(@&_qyup89xg').strip("'")
 # DEBUG = False if os.environ.get('DEBUG') == 'False' else True
 print(str(os.getenv('DEBUG', 'True')).lower())
