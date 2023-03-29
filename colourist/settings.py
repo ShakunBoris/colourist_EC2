@@ -17,9 +17,9 @@ if DEBUG == False:
     ALLOWED_HOSTS = ['*']
     # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 else:
-    ALLOWED_HOSTS = ['*', 'DEBUG_TRUE']
+    ALLOWED_HOSTS = ['*']
 
-print(ALLOWED_HOSTS, 'ALLOWED_HOSTS')
+print(ALLOWED_HOSTS, type(DEBUG))
 try:
     CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS').split()
     print('CSRF_TRUSTED_ORIGINS:', CSRF_TRUSTED_ORIGINS)
