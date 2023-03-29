@@ -17,7 +17,7 @@ if DEBUG == False:
     ALLOWED_HOSTS = ['*']
     # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 else:
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['*', 'DEBUG_TRUE']
 
 print(ALLOWED_HOSTS, 'ALLOWED_HOSTS')
 try:
