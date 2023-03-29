@@ -1,27 +1,26 @@
 from pathlib import Path
 import os
+import environ
 
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-gii4k+gh&1u%qilw%#+udjw15p-mspdon$f@pw(@&_qyup89xg').strip("'")
-# DEBUG = False if os.environ.get('DEBUG') == 'False' else True
-print('---------------------', str(os.getenv('DEBUG', 'True')).lower())
-# DEBUG = False if 'false' in str(os.getenv('DEBUG', 'True')).lower() else True
-DEBUG = os.environ.get('DEBUG', '').split() != 'False'
-# os.getenv("ENV_VAR", 'False').lower() in ('true', '1', 't')
+
+SECRET_KEY = env('SECRET_KEY') #, "django-insecure-gii4k+gh&1u%qilw%#+udjw15p-mspdon$f@pw(@&_qyup89xg')")
+DEBUG = env('DEBUG') != 'False'
 print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG} type={type(DEBUG)}{20*"-"}\n')
-# print('environ', os.environ)
 if DEBUG == False:
-    # print('ENVIRONMENT TEST ABC: ', os.environ.get('TEST'))
-    # print('type: ', type(DEBUG), DEBUG, os.environ.get('ALLOWED_HOSTS'))
-    ALLOWED_HOSTS = ['*']
-    # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
+    ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
+    print('ALLOWED_HOSTS', env('ALLOWED_HOSTS'))
 else:
     ALLOWED_HOSTS = ['*']
 
 try:
-    CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS').split()
+    CSRF_TRUSTED_ORIGINS = [env('CSRF_TRUSTED_ORIGINS')]
     print('CSRF_TRUSTED_ORIGINS:', CSRF_TRUSTED_ORIGINS)
 except AttributeError:
     print('No CSRF_TRUSTED_ORIGINS loaded')

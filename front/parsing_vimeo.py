@@ -1,9 +1,13 @@
 import os
 import re
 import requests
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 def list_of_videos():
-    TOKEN = os.environ.get('VIMEO_TOKEN')
+    TOKEN = env('VIMEO_TOKEN')
     user_id = "alvicolor"
     access_token = TOKEN
     url = f"https://api.vimeo.com/users/{user_id}/videos"

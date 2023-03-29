@@ -4,3 +4,5 @@ db.sqlite3
 */migrations/*.pyc
 !*/migrations/__init__.py
 /.venv
+.env_custom
+.env
