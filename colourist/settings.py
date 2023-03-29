@@ -7,10 +7,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-gii4k+gh&1u%qilw%#+udjw15p-mspdon$f@pw(@&_qyup89xg').strip("'")
 # DEBUG = False if os.environ.get('DEBUG') == 'False' else True
 print('---------------------', str(os.getenv('DEBUG', 'True')).lower())
-DEBUG = False if 'false' in str(os.getenv('DEBUG', 'True')).lower() else True
+# DEBUG = False if 'false' in str(os.getenv('DEBUG', 'True')).lower() else True
+DEBUG = os.environ.get('DEBUG', '') != 'False'
 # os.getenv("ENV_VAR", 'False').lower() in ('true', '1', 't')
 print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG} type={type(DEBUG)}{20*"-"}\n')
-print('environ', os.environ)
+# print('environ', os.environ)
 if DEBUG == False:
     # print('ENVIRONMENT TEST ABC: ', os.environ.get('TEST'))
     # print('type: ', type(DEBUG), DEBUG, os.environ.get('ALLOWED_HOSTS'))
