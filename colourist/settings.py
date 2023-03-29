@@ -20,7 +20,7 @@ if DEBUG == False:
         "3.125.8.5",
         "http://3.125.8.5/",
         ] # [env('ALLOWED_HOSTS')]
-    print('ALLOWED_HOSTS', env('ALLOWED_HOSTS'))
+    print('<= realALLOWED_HOSTS //// OLD=>', env('ALLOWED_HOSTS'))
 else:
     ALLOWED_HOSTS = ['*']
 
