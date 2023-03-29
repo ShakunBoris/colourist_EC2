@@ -14,7 +14,7 @@ SECRET_KEY = env('SECRET_KEY') #, "django-insecure-gii4k+gh&1u%qilw%#+udjw15p-ms
 DEBUG = env('DEBUG') != 'False'
 print(f'\n{20*"-"}ATENCIÓN! DEBUG={DEBUG} type={type(DEBUG)}{20*"-"}\n')
 if DEBUG == False:
-    ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
+    ALLOWED_HOSTS = ['http://3.125.8.5/']#[env('ALLOWED_HOSTS')]
     print('ALLOWED_HOSTS', env('ALLOWED_HOSTS'))
 else:
     ALLOWED_HOSTS = ['*']
