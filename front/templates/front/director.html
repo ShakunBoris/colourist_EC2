@@ -1,0 +1,16 @@
+{% extends 'front/layout.html' %} {% load static %} 
+{% block title %} Gallery {% endblock %} {% block head %} {% endblock %} 
+{% block style %}
+<link href="{% static 'front/director.css' %}" rel="stylesheet" />
+{% endblock%} 
+{% block body %}
+<div class="videos">
+    {% for video in videos %}
+        <div class="single-video">
+            {{video | safe }}
+        </div>
+    {% endfor %}
+</div>
+{%endblock%} 
+{% block script %}
+{% endblock %}
