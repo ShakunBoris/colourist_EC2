@@ -68,3 +68,4 @@ class Videos(models.Model):
     order = models.IntegerField(default=0)
     def preview(self): # new
         return mark_safe(self.embed)   
+    
