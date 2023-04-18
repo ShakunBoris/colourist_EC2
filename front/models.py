@@ -60,3 +60,11 @@ class GalleryImage(models.Model):
         self.thumbnail.save(thumb_filename, ContentFile(temp_thumb.read()), save=False)
         temp_thumb.close()
         return True
+
+# Create your models here.
+class Videos(models.Model):
+    title = models.CharField(max_length=20, null=True)
+    embed = models.CharField(max_length=1000)
+    order = models.IntegerField(default=0)
+    def preview(self): # new
+        return mark_safe(self.embed)   

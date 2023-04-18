@@ -18,8 +18,13 @@ def gallery(request):
     return render(request, 'front/gallery.html', context)
 
 def director(request):
+    qs = Videos.objects.filter(order__gt=0).order_by('order')
+    videos = []
+    for video in qs:
+        videos.append(video.embed)
     context = {
-        'videos': list_of_videos(),
+        # 'videos': list_of_videos(),
+        'videos': videos,
     }
     return render(request, 'front/director.html', context)
 
