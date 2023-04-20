@@ -48,4 +48,6 @@ you can modify order of videos, and which will be shown on the /director page.
 # Additional
 I use nanogallery2, wowjs and image-compare-viewer for gallery, element spawn effect and befor-after slidebar respectively.
 
+3 custom models, and custom admin templates.
+
 
