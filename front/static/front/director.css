@@ -5,3 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+.single-video *{ 
+    max-width: 100vw;
+ }
